@@ -48,7 +48,6 @@ Saya bot manajemen grup modular dengan beberapa tambahan yang menyenangkan! Liha
  ࿇ /start: Mulai bot ini
  ࿇ /help: PM Anda pesan ini.
  ࿇ /help <module name>: PM info Anda tentang modul itu.
- ࿇ /botmusic: Jika anda ingin menggunakan bot musik saya.
  ࿇ /settings:
    ☞  ✐ Di PM: akan mengirimkan pengaturan Anda untuk semua modul yang didukung.
    ☞  ✐ Di dalam Group: akan mengarahkan Anda ke pm, dengan semua pengaturan obrolan itu.
@@ -64,7 +63,7 @@ def vercheck() -> str:
     return str(VERSION)
 
 
-BOTMUSIC_STRING = """
+SOURCE_STRING = """
 ⚡Bot ini bisa memutar musik di VCG GROUP atau panggilan suara grup Anda [Klik Disini](Https://t.me/MightyMusic_bot)
 ⚡Kamu bisa menggunakan saya [klik Disini](Https://t.me/MightyMusic_bot)
 """
@@ -574,7 +573,7 @@ def main():
     settings_handler = CommandHandler("settings", get_settings)
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
    
-    source_handler = CommandHandler("botmusic", botmusic)
+    source_handler = CommandHandler("source", source)
     
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
 
