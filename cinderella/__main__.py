@@ -44,7 +44,7 @@ HELP_STRINGS = """
 Hei kamu yg disana! Nama saya adalah *{}*.
 Saya bot manajemen grup modular dengan beberapa tambahan yang menyenangkan! Lihatlah yang berikut ini untuk mendapatkan gambaran tentang beberapa hal yang dapat saya bantu.
 
-*Perintah* utama tersedia:
+*Perintah utama* tersedia!!:
  ࿇ /start: Mulai bot ini
  ࿇ /help: PM Anda pesan ini.
  ࿇ /help <module name>: PM info Anda tentang modul itu.
@@ -53,7 +53,7 @@ Saya bot manajemen grup modular dengan beberapa tambahan yang menyenangkan! Liha
    ☞  ✐ Di PM: akan mengirimkan pengaturan Anda untuk semua modul yang didukung.
    ☞  ✐ Di dalam Group: akan mengarahkan Anda ke pm, dengan semua pengaturan obrolan itu.
 {}
-Dan berikut Info yg dapat digunakan dalam grup:
+Dan berikut Command-Command yg dapat digunakan dalam grup:
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nSemua perintah bisa digunakan dengan / atau!.\n")
 
 
@@ -574,7 +574,7 @@ def main():
     settings_handler = CommandHandler("settings", get_settings)
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
    
-    source_handler = CommandHandler("source", source)
+    source_handler = CommandHandler("botmusic", botmusic)
     
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
 
@@ -608,7 +608,7 @@ def main():
             updater.bot.set_webhook(url=URL + TOKEN)
 
     else:
-        LOGGER.info("Cinderella running...")
+        LOGGER.info("Moghty Warrior running...")
         updater.start_polling(timeout=15, read_latency=4)
         client.run_until_disconnected()
 
